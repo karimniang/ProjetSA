@@ -1,0 +1,43 @@
+.navTg {
+    margin-right: 5px;
+}
+
+.sidenav {
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 20%;
+	transition: all 0.9s;
+	ul li a {
+		padding: 10px;
+		font-size: 1.1em;
+		display: block;
+		color: white;
+		border-radius: 5px;
+	}
+	ul li a:hover {
+		color: black;
+		background: #fff;
+	}
+	.img-content {
+		width: 100px;
+		height: 100px;
+	}
+	
+}
+
+.content.navopened {
+	.sidenav {
+		display: initial;
+	}
+	.main {
+		margin-left: 20%;
+		transition: margin-left .5s;
+	}
+}
+
+.content {
+	position: relative;
+	min-height: 100vh;
+}

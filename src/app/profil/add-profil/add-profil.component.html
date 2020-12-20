@@ -1,0 +1,37 @@
+<div class="container p-4 border-left w-50 mx-auto shadow">
+  <form
+    [formGroup]="this.profilRegister"
+    (ngSubmit)="this.onSubmitForm()"
+    name="form"
+  >
+    <h2 class="aligne-center">Ajouter un profil</h2>
+    <div class="form-group">
+      <label for="libelle">Libelle</label>
+      <input
+        type="text"
+        class="form-control w-50 mb-2 mt-2"
+        name="libelle"
+        id="libelleId"
+        aria-describedby="helpId"
+        placeholder=""
+        formControlName="libelle"
+        [(ngModel)]="this.ancien.libelle"
+      />
+      <span *ngIf="this.libelleRequiredError()" class="text-danger">
+        Renseigner le libelle du profil.</span
+      >
+    </div>
+    <div class="mt-4">
+      <button
+        type="submit"
+        name=""
+        id=""
+        class="btn btn-primary"
+        btn-lg
+        btn-block>
+        Enregistrer
+      </button>
+      <button type="reset" (click)="this.onResetForm()" class="btn btn-danger resetButton">Annuler</button>
+    </div>
+  </form>
+</div>

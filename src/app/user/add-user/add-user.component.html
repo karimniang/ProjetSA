@@ -1,0 +1,141 @@
+<div class="container p-4 border-left w-50 mx-auto shadow">
+  <form *ngIf="!this.modifier" class="mt-4" (ngSubmit)="this.onSubmitForm()" [formGroup]="registerForm" (ngReset)="this.onResetForm()" name="form">
+    <h2>Ajouter un utilisateur</h2>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Select</mat-label>
+        <mat-select formControlName="profil">
+          <mat-option value="apprenants">Apprenant</mat-option>
+          <mat-option value="admins">Admin</mat-option>
+          <mat-option value="formateurs">Formateur</mat-option>
+          <mat-option value="cms">Cm</mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.registerForm.controls.profil.touched && this.registerForm.controls.profil.invalid">
+          <span *ngIf="this.registerForm.controls.profil.errors.required">Veuillez renseigner le profil.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <div class="example-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Firstname</mat-label>
+        <input matInput formControlName="firstname"/>
+        <mat-error *ngIf="this.registerForm.controls.firstname.touched && this.registerForm.controls.firstname.invalid">
+          <span *ngIf="this.registerForm.controls.firstname.errors.required">Veuillez renseigner le prenom.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <div class="example-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Lastname</mat-label>
+        <input matInput formControlName="lastname"/>
+        <mat-error *ngIf="this.registerForm.controls.lastname.touched && this.registerForm.controls.lastname.invalid">
+          <span *ngIf="this.registerForm.controls.lastname.errors.required">Veuillez renseigner le nom.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <div>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> E-mail
+        </mat-label>
+        <input matInput formControlName="email" required>
+        <mat-error *ngIf="this.registerForm.controls.email.touched && this.registerForm.controls.email.invalid">
+          <span *ngIf="this.registerForm.controls.email.errors.required">Veuillez renseigner l'email.</span>
+          <span *ngIf="this.registerForm.controls.email.errors.pattern">L'email saisi est invalide.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <div class="example-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Telephone</mat-label>
+        <input matInput formControlName="telephone"/>
+        <mat-error *ngIf="this.registerForm.controls.telephone.touched && this.registerForm.controls.telephone.invalid">
+          <span *ngIf="this.registerForm.controls.telephone.errors.required">Veuillez renseigner le telephone.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <div>
+      <mat-form-field>
+        <ngx-mat-file-input #removableInput formControlName="avatar" (change)="onFileSelect($event)" placeholder="Avatar user"></ngx-mat-file-input>
+        <!-- <button mat-icon-button matSuffix *ngIf="!removableInput.empty" (click)="removableInput.clear($event)">
+          <mat-icon>clear</mat-icon>
+        </button> -->
+        
+      </mat-form-field>
+    </div>
+    <br>
+    <div class="example-button-row">
+      <button type="submit" mat-raised-button color="primary" class="mr-0">Enregistrer</button>
+      <button class="resetButton" type="reset" mat-raised-button color="warn">Reset</button>
+    </div>
+  </form>
+
+   <!-- form update -->
+
+  <form *ngIf="this.modifier" class="mt-4" (ngSubmit)="this.onSubmitForm()" [formGroup]="registerForm"  name="formUpdated">
+    <h2>Modifier un utilisateur</h2>
+    <div class="example-button-row">
+      <br>
+      <div class="example-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Firstname</mat-label>
+          <input matInput [(ngModel)]="this.ancien.firstname" formControlName="firstname"/>
+          <mat-error *ngIf="this.registerForm.controls.firstname.touched && this.registerForm.controls.firstname.invalid">
+            <span *ngIf="this.registerForm.controls.firstname.errors.required">Veuillez renseigner le prenom.</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="example-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Lastname</mat-label>
+          <input matInput [(ngModel)]="this.ancien.lastname" formControlName="lastname"/>
+          <mat-error *ngIf="this.registerForm.controls.lastname.touched && this.registerForm.controls.lastname.invalid">
+            <span *ngIf="this.registerForm.controls.lastname.errors.required">Veuillez renseigner le nom.</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br>
+      <div>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> E-mail
+          </mat-label>
+          <input matInput [(ngModel)]="this.ancien.email" formControlName="email" required>
+          <mat-error *ngIf="this.registerForm.controls.email.touched && this.registerForm.controls.email.invalid">
+            <span *ngIf="this.registerForm.controls.email.errors.required">Veuillez renseigner l'email.</span>
+            <span *ngIf="this.registerForm.controls.email.errors.pattern">L'email saisi est invalide.</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="example-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Telephone</mat-label>
+          <input matInput [(ngModel)]="this.ancien.telephone" formControlName="telephone"/>
+          <mat-error *ngIf="this.registerForm.controls.telephone.touched && this.registerForm.controls.telephone.invalid">
+            <span *ngIf="this.registerForm.controls.telephone.errors.required">Veuillez renseigner le telephone.</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br>
+      <div>
+        <mat-form-field>
+          <ngx-mat-file-input #removableInput formControlName="avatar" (change)="onFileSelect($event)" placeholder="Avatar user"></ngx-mat-file-input>
+          <!-- <button mat-icon-button matSuffix *ngIf="!removableInput.empty" (click)="removableInput.clear($event)">
+            <mat-icon>clear</mat-icon>
+          </button> -->
+          
+        </mat-form-field>
+      </div>
+      <br>
+      <button type="submit" mat-raised-button color="primary" class="mr-0">Enregistrer</button>
+      <button class="resetButton" (click)="this.onAnnuleForm()" mat-raised-button color="warn">Annuler</button>
+    </div>
+  </form>
+</div>
+    
+

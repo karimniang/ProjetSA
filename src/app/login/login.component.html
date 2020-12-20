@@ -1,0 +1,36 @@
+<div class="h-100">
+  <div class="row">
+    <div class="col-md-7 section-l">
+      <h1 class="title display-4">Coding for better life !</h1>
+    </div>
+    <div class="col-md-5 section-r">
+      <div class="card shadow">
+        <img class="card-img-top logo" src="assets/images/logo.png" alt="">
+        <div class="card-body">
+          <form action="" class="form" (ngSubmit)="onSubmit()" #f="ngForm" name="form">
+            <h1 class="card-title mb-2 mt-2">Connexion</h1>
+            <div class="row">
+              <div class="col-md-9">
+                <div class="form-group mb-5">
+                  <label for="">Username</label>
+                  <input type="text" class="form-control" name="username" id="userId" aria-describedby="usernameHelpId" [(ngModel)]="form.username">
+                  <small id="usernameHelpId" class="form-text text-muted">Enter your username</small>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="form-group mb-3">
+                  <label for="">Password</label>
+                  <input type="password" class="form-control" name="password" id="passId" [(ngModel)]="form.password">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-lg btn-dark m-2">Submit</button>
+                <button  class="btn btn-lg btn-secondary m-2">Mot de pass oublié ?</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<nav class="bg-dark navbar navbar-dark bg-dark text-white shadowing" id="navbar">
+  <div class="nav p-3">
+    <div class="navTg">
+      <button
+        class="navbar-toggler myClass"
+        type="button"
+        (click)="this.toggleNav()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <h2 >Home</h2>
+  </div>
+  <div class="gap-2 d-md-flex justify-content-md-end">
+    <button
+      class="btn btn-primary me-md-2 mb-2"
+      (click)="logout()"
+      type="button">
+      Deconnexion
+    </button>
+  </div>
+</nav>
+<div class="content" [class.navopened]="this.isNavOpened">
+  <div class="sidenav bg-dark text-white">
+    <div>
+      
+    </div>
+    <ul class="navbar-nav text-center">
+      <li>
+        <img class="rounded-circle img-content" src="{{'data:image/jpg;base64,'+this.avatar}}" alt="avatar">
+        <h3>{{this.firstname}}  {{this.lastname}}</h3>
+      </li>
+      <div>
+        <li class="nav-item">
+          <a href="accueil-admin/liste-user" class="nav-link">Utilisateur</a>
+        </li>
+      </div>
+      <div>
+        <li class="nav-item">
+          <a href="accueil-admin/liste-profil" class="nav-link">Profils</a>
+        </li>
+      </div>
+    </ul>
+  </div>
+  <div id="main" class="main">
+    <router-outlet></router-outlet>
+  </div>
+</div>

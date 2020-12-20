@@ -1,0 +1,35 @@
+.section-l {
+    background-image: linear-gradient(to bottom, #000000, #3b3b3b, #ffffff);    color: white;
+    .title {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+}
+
+.section-r {
+    .card {
+        position: absolute;
+        top: 20%;
+        bottom: 20%;
+        left: 10%;
+        right: 10%;
+        border-radius: 5%;
+        padding: 2%;
+
+        .card-title {
+            text-align: center;
+        }
+    }
+    .logo {
+        width: 80% !important;
+        margin: auto;
+    }
+}
+
+.section-l, .section-r {
+    height: 100vh;
+    position: relative;
+}

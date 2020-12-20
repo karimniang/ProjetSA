@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "abdou.karim",
+      "password": "LnAAsMBNbZIydl6",
+      "email": "Tremaine_Jacobi79@gmail.com"
+    },
+    {
+      "id": 2,
+      "username": "abdou25",
+      "password": "R7VdDDiM74PImct",
+      "email": "Korey81@hotmail.com"
+    },
+    {
+      "id": 3,
+      "username": "abdou.karim",
+      "password": "K1EMZBALuc7bTrL",
+      "email": "Maddison42@yahoo.com"
+    },
+    {
+      "id": 4,
+      "username": "abdou.karim",
+      "password": "qjAYp_NYqeH8x0R",
+      "email": "Forrest28@yahoo.com"
+    },
+    {
+      "email": "karim@gmail.com",
+      "password": "$2a$10$xjyTaCrdHT2NeUFnpyw9auF2K8eMdq1eoeJmShNP9Y.KgvP38VGQW",
+      "username": "myuser",
+      "id": 5
+    },
+    {
+      "email": "karim@niang.com",
+      "password": "$2a$10$TreNCVHWRUD1ftK3KoJpqOFsvmioMY4FLAFlXn59HYQSMg1GQ22yi",
+      "username": "myuser",
+      "id": 6
+    }
+  ]
+}
